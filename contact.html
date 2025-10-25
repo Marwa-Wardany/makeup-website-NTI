@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — GlamBeauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+  />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+  --bg: #fff2f6;
+  --accent: #ff4d8a;
+  --accent-light: #ffc1d9;
+  --text-dark: #2b2b2b;
+  --muted: #6b6b74;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(255, 77, 138, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 130px 20px;
+}
+
+.contact-container {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  padding: 40px;
+  animation: fadeIn 0.8s ease both;
+}
+
+.contact-info {
+  flex: 1 1 350px;
+}
+
+.contact-info h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+}
+
+.contact-info h1 span {
+  color: var(--accent);
+}
+
+.contact-info p {
+  color: var(--muted);
+  margin: 12px 0 24px;
+}
+
+.info-box p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dark);
+}
+
+.info-box i {
+  color: var(--accent);
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: var(--accent);
+  margin-right: 12px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--accent-light);
+  transform: scale(1.1);
+}
+
+.contact-form {
+  flex: 1 1 320px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffcce0;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(255, 77, 138, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contact-info h1 {
+    font-size: 28px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Glam<span>Beauty</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="fa-solid fa-heart" onclick="window.location='favorites.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location='cart.html'"></i>
+      <i class="fa-solid fa-user" onclick="window.location='login.html'"></i>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+    
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h1>Contact <span>GlamBeauty</span></h1>
+        <p>We’d love to hear from you! Whether you have a question about our products, an order, or anything else, our team is ready to assist.</p>
+        
+        <div class="info-box">
+          <p><i class="fa-solid fa-envelope"></i> info@glambeauty.com</p>
+          <p><i class="fa-solid fa-phone"></i> +20 100 123 4567</p>
+          <p><i class="fa-solid fa-location-dot"></i> Cairo, Egypt</p>
+        </div>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h2>Get in Touch</h2>
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="input-group">
+          <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        </div>
+        <div style="display: flex; justify-content: center ;">
+          <button type="submit" class="btn" style="width: 150px;">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <h3>GlamBeauty</h3>
+        <p>Enhancing your natural beauty with love, luxury, and care.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> info@glambeauty.com</p>
+        <p><i class="fa-solid fa-phone"></i> +20 100 123 4567</p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 GlamBeauty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a4f1b5cfb5.js" crossorigin="anonymous"></script>
+  <script >
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  alert(`Thanks, ${name}! Your message has been sent successfully 💖`);
+  this.reset();
+});
+
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | GlamBeauty</title>
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">Glam<span>Beauty</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="fa-solid fa-heart" onclick="window.location='favorites.html'"></i>
+      <i class="fa-solid fa-cart-shopping active" onclick="window.location='cart.html'"></i>
+      <i class="fa-solid fa-user" onclick="window.location='login.html'"></i>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+    
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+
+  <section class="cart-section">
+    <h2>Your Shopping Cart</h2>
+
+    <div class="cart-container" id="cart-container">
+      <p class="empty-cart">Your cart is empty 💔</p>
+    </div>
+
+    <div class="cart-summary" id="cart-summary">
+      <h3>Total: <span id="total-price">$0.00</span></h3>
+      <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </section>
+  <div class="order-popup" id="order-popup">
+    <div class="order-content">
+      <h2>Order Summary</h2>
+      <div id="order-details"></div>
+      <h3 id="order-total"></h3>
+      <button id="close-popup">Close</button>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <h3>GlamBeauty</h3>
+        <p>Enhancing your natural beauty with love, luxury, and care.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> info@glambeauty.com</p>
+        <p><i class="fa-solid fa-phone"></i> +20 100 123 4567</p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 GlamBeauty. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+  />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login">
+  <nav class="navbar">
+    <div class="logo">Glam<span>Beauty</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="fa-solid fa-heart" onclick="window.location='favorites.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location='cart.html'"></i>
+      <i class="fa-solid fa-user active" onclick="window.location='login.html'"></i>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+    
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+  <div class="container">
+    <form class="form-box">
+      <h2>Welcome Back </h2>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <div class="options">
+        <label><input type="checkbox" id="Remember me" class="check"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button class="log-btn" type="submit">Log In</button>
+
+      <p class="switch">Don't have an account? 
+        <a href="register.html">Register</a>
+      </p>
+    </form>
+  </div>
+  </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>GlamBeauty</h3>
+      <p>Enhancing your natural beauty with love, luxury, and care.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-envelope"></i> info@glambeauty.com</p>
+      <p><i class="fa-solid fa-phone"></i> +20 100 123 4567</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 GlamBeauty. All rights reserved.</p>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

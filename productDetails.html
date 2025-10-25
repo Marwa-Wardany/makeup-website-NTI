@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+      <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+  />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body{
+       background: #fff2f6;
+    }
+    .product-details {
+      max-width: 900px;
+      
+      margin: 120px auto 60px ;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .product-details img {
+      width: 300px;
+      border-radius: 12px;
+    }
+
+    .details-info {
+      max-width: 450px;
+    }
+
+    .details-info h2 {
+      font-size: 1.8rem;
+      color: #e91e63;
+    }
+
+    .details-info p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .details-info button {
+      padding: 10px 20px;
+      background-color: #e91e63;
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .details-info button:hover {
+      background-color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Glam<span>Beauty</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <i class="fa-solid fa-heart" onclick="window.location='favorites.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location='cart.html'"></i>
+      <i class="fa-solid fa-user" onclick="window.location='login.html'"></i>
+      <button id="logout-btn" class="btn">Logout</button>
+    </div>
+    
+
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </nav>
+  <section class="product-details" id="product-details"></section>
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <h3>GlamBeauty</h3>
+        <p>Enhancing your natural beauty with love, luxury, and care.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fa-solid fa-envelope"></i> info@glambeauty.com</p>
+        <p><i class="fa-solid fa-phone"></i> +20 100 123 4567</p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 GlamBeauty. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+    const container = document.getElementById("product-details");
+
+    if (!product) {
+      container.innerHTML = "<p>No product selected.</p>";
+    } else {
+      container.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <div class="details-info">
+          <h2>${product.name}</h2>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Price:</strong> $${product.price}</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             This ${product.name} gives you a flawless finish and long-lasting comfort.</p>
+          <button class="add-to-cart" id="add-to-cart"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+        </div>
+      `;
+
+      document.getElementById("add-to-cart").addEventListener("click", () => {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (!currentUser) {
+          alert("Please login first 🩷");
+          return;
+        }
+
+        let cart = JSON.parse(localStorage.getItem(`cart_${currentUser.email}`)) || [];
+        const exists = cart.find((item) => item.id === product.id);
+        if (exists) {
+          alert("🛒 Already in your cart!");
+        } else {
+          cart.push(product);
+          localStorage.setItem(`cart_${currentUser.email}`, JSON.stringify(cart));
+          alert(`${product.name} added to cart 🛍️`);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
