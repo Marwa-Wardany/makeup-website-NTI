@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (currentUser && currentUser.name) {
     welcomeText.textContent = `Welcome back, ${currentUser.name}!`;
   } else {
-    welcomeText.textContent = "Welcome to our shop 🌸";
+    welcomeText.textContent = "Glow with GlamBeauty ✨";
   }
 });
 
